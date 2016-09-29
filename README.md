@@ -1,5 +1,5 @@
 # 2016-Tower-Defense-Game
-|2016| Game I had to make for my computer science class using java in the greenfoot environment 
+|2016| Game I had to make for my computer science class using java in the greenfoot environment. 
 NOTE: Sounds and rat images do not belong to me, sources will be below.
 
 List of things required for 4+
