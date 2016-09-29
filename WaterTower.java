@@ -1,0 +1,37 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * This tower will shoot a bullet but may be more in accurate than the basic tower
+ * 
+ * @author Rohit Terry Kisto
+ * @version 2016/9/30
+ */
+public class WaterTower extends Tower
+{
+     /**
+     * Constructs a Tower
+     * @param World world
+     * @param int x position
+     * @param int y position
+     * @Override
+     */
+    public WaterTower(World world, int x, int y)
+    {
+        super(world, x, y);
+        
+        range = 150;                                                            
+        world.addObject(this, x, y);                                  // Add this to object to the world
+        isAbleToShoot = true;                                         // This tower can shoot right now
+        timer = 0;                 
+        isDestroyed = false;
+    }
+    
+    /**
+     * Act - do whatever the FireTower wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        super.act();
+    }     
+}
