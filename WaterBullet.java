@@ -16,15 +16,22 @@ public class WaterBullet extends Bullet
      * @param double enemy x position
      * @param double enemy y position
      */
-    public PsychoBullet(World world, int x, int y, double ex, double ey)
+    public WaterBullet(World world, int x, int y, double ex, double ey)
     {
         super(world, x, y, ex, ey);
         
         velocity = 5;
         
         //turnTowards(ex, ey);
-        double angle = Math.atan2(ey - y, ex - x);                  // Angle is the same as the inverse tangent of the difference between
+        //double angle = Math.atan2(ey - y, ex - x);                  // Angle is the same as the inverse tangent of the difference between
                                                                     // the enemies position and the towers position
+        
+        double interfere = Math.ceil((Math.random() * 10) + 1);
+        System.out.println(interfere);
+        if(interfere == 2 || interfere == 8)
+        {
+            angle += Math.ceil((Math.random() * 90) - 45);           
+        }
         setRotation((int)(Math.toDegrees((angle))));                // Aim towards x angle
         
         //System.out.println((int)(-1 * Math.toDegrees((angle))));
@@ -39,11 +46,6 @@ public class WaterBullet extends Bullet
     public void act() 
     {
         super.act();
-        move(velocity);
-        if(isAtEdge() || getX() > 10 * 60)
-        {
-            destroy();                                              // If the bullet is on the edge of the screen, delete it
-        }
     }    
     
     /**

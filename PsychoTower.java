@@ -19,7 +19,8 @@ public class PsychoTower extends Tower
     {
         super(world, x, y);
         
-        range = 300;                                                  // 'Default' range for tower, will be overriden
+        cooldownTime = 10;
+        range = 290;                                                  // 'Default' range for tower, will be overriden
         world.addObject(this, x, y);                                  // Add this to object to the world
         isAbleToShoot = true;                                         // This tower can shoot right now
         timer = 0;                 

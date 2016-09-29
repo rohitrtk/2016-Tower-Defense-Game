@@ -20,7 +20,7 @@ public class PsychoBullet extends Bullet
     {
         super(world, x, y, ex, ey);
         
-        velocity = 5;
+        velocity = 20;
         
         //turnTowards(ex, ey);
         double angle = Math.atan2(ey - y, ex - x);                  // Angle is the same as the inverse tangent of the difference between
@@ -39,11 +39,6 @@ public class PsychoBullet extends Bullet
     public void act() 
     {
         super.act();
-        move(velocity);
-        if(isAtEdge() || getX() > 10 * 60)
-        {
-            destroy();                                              // If the bullet is on the edge of the screen, delete it
-        }
     }    
     
     /**

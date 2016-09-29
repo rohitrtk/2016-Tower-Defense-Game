@@ -144,4 +144,13 @@ public class Enemy extends AbstEnemy
     {
         return moveSpeed;
     }
+    
+    public void takeDamage()
+    {
+    }
+    
+    public boolean checkHit()
+    {
+        return false;
+    }
 }

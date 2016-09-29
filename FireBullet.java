@@ -16,14 +16,14 @@ public class FireBullet extends Bullet
      * @param double enemy x position
      * @param double enemy y position
      */
-    public PsychoBullet(World world, int x, int y, double ex, double ey)
+    public FireBullet(World world, int x, int y, double ex, double ey)
     {
         super(world, x, y, ex, ey);
         
-        velocity = 5;
+        velocity = 10;
         
         //turnTowards(ex, ey);
-        double angle = Math.atan2(ey - y, ex - x);                  // Angle is the same as the inverse tangent of the difference between
+        angle = Math.atan2(ey - y, ex - x);                  // Angle is the same as the inverse tangent of the difference between
                                                                     // the enemies position and the towers position
         setRotation((int)(Math.toDegrees((angle))));                // Aim towards x angle
         
@@ -39,10 +39,12 @@ public class FireBullet extends Bullet
     public void act() 
     {
         super.act();
-        move(velocity);
-        if(isAtEdge() || getX() > 10 * 60)
+
+        double random = Math.ceil(Math.random() * 1000);
+        if(random > 0 && random < 10)
         {
-            destroy();                                              // If the bullet is on the edge of the screen, delete it
+            System.out.println("fore");
+            destroy();
         }
     }    
     

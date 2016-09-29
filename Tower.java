@@ -16,7 +16,7 @@ public class Tower extends Actor
     protected int cost;                   // The cost for the tower
     protected int timer;                  // Time between shots (TIMER GOES UP BY 2'S?)
     protected float range;                // How far the tower can shoot
-    protected float cooldownTime = 72;    // The cooldown time in seconds between each shot (Mutiply original time by 36 until FPS is established)
+    protected float cooldownTime;         // The cooldown time in seconds between each shot (Mutiply original time by 36 until FPS is established)
     protected String imagePath;           // Image path
     protected boolean isAbleToShoot;      // Is the tower able to shoot right now
     protected boolean isPlaced;
@@ -33,6 +33,7 @@ public class Tower extends Actor
         this.y = y;
         this.isPlaced = true;
         
+        cooldownTime = 72;
         range = 100;                                                            // 'Default' range for tower, will be overriden
         isAbleToShoot = true;
         timer = 0;
@@ -53,6 +54,7 @@ public class Tower extends Actor
         this.y = y;
         this.isPlaced = true;
         
+        cooldownTime = 72;
         range = 150;                                                            // 'Default' range for tower, will be overriden
         world.addObject(this, x, y);                                  // Add this to object to the world
         isAbleToShoot = true;                                                   // This tower can shoot right now
@@ -83,6 +85,8 @@ public class Tower extends Actor
                     //System.out.println(timer);
                 }
             }
+            
+
         }
         
         if(isDestroyed) 
@@ -153,7 +157,19 @@ public class Tower extends Actor
         {
             if(a instanceof Enemy)                                                                  // If instance of enemy...
             {                
-                new Bullet(world, getX(), getY() - 20, list.get(i).getX(), list.get(i).getY());          // New bullet
+                if(this instanceof WaterTower)
+                {
+                    new WaterBullet(world, getX(), getY() - 20, list.get(i).getX(), list.get(i).getY());
+                } else if(this instanceof FireTower) {
+                    new FireBullet(world, getX(), getY() - 20, list.get(i).getX(), list.get(i).getY());
+                } else if(this instanceof BlackTower) {
+                    new BlackBullet(world, getX(), getY() - 20, list.get(i).getX(), list.get(i).getY());
+                } else if(this instanceof PsychoTower) {
+                    new PsychoBullet(world, getX(), getY() - 20, list.get(i).getX(), list.get(i).getY());
+                } else {
+                    new Bullet(world, getX(), getY() - 20, list.get(i).getX(), list.get(i).getY());
+                }
+                          
                 isAbleToShoot = false;                                                              // Tower can't shoot
                 return;                                                                             // Stop any more code in this method from running
             }

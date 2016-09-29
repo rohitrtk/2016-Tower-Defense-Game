@@ -1,13 +1,10 @@
 #BlueJ class context
 comment0.target=PsychoTower
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ PsychoTower\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Insane\ DPS\ and\ RoF\ tower\r\n\ \r\n\ @author\ Rohit\ Terry\ Kisto\r\n\ @version\ 2016/9/30\r\n
 comment1.params=world\ x\ y
 comment1.target=PsychoTower(greenfoot.World,\ int,\ int)
 comment1.text=\r\n\ Constructs\ a\ Tower\r\n\ @param\ World\ world\r\n\ @param\ int\ x\ position\r\n\ @param\ int\ y\ position\r\n\ @Override\r\n
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ FireTower\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-comment3.params=
-comment3.target=void\ findTarget()
-comment3.text=\r\n\ This\ method\ finds\ the\ closest\ target\ to\ this\ tower\ and\ fires\ a\ bullet\ at\ it\r\n\ @return\ void\r\n
-numComments=4
+numComments=3

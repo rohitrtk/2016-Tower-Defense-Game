@@ -21,9 +21,10 @@ public class Map1 extends World
     private int timer;                                  // Timer for enemies spawning
     private boolean spawn;                              // Can the enemies spawn?
     
-    Round roundGUI;
-    PlayButton playButton;
-    TowerButton towerButton;
+    private Backdrop backDrop;
+    private Round roundGUI;                             // Round counter
+    private PlayButton playButton;                      // Play button 
+    private TowerButton[] towerButtons;                    // Tower Buttons
 
     /**
      * This method constructs Map1 and initializes the world, the tiles on the world
@@ -35,7 +36,6 @@ public class Map1 extends World
         // Cell width is 60 pixels each
         super(840, 540, 1); 
         
-        mouse = Greenfoot.getMouseInfo();
         guiHandler();
         
         tiles = new Tile[10][14];                       // Sets width and height of tile map
@@ -94,7 +94,6 @@ public class Map1 extends World
      */
     public void act()
     {       
-        spawnTower();
         spawnEnemy();
         roundGUI.setRound(round);
         MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -136,10 +135,16 @@ public class Map1 extends World
      */
     private void guiHandler()
     {
-        Backdrop backdrop = new Backdrop(this, 12 * 60, 4 * 60);
+        backDrop = new Backdrop(this, 12 * 60, 4 * 60);
         playButton = new PlayButton(this, 12 * 60 + 18, 8 * 60, false);
         roundGUI = new Round(this, 12 * 60, 20, round);
-        towerButton = new WaterTowerButton(this, 12 * 60, 50);
+        
+        towerButtons = new TowerButton[5];
+        towerButtons[0] = new TowerButton(this, 12 * 60 - 30, 50);
+        towerButtons[1] = new WaterTowerButton(this, 12 * 60 - 30, 90);
+        towerButtons[2] = new FireTowerButton(this, 12 * 60 - 30, 130);
+        towerButtons[3] = new BlackTowerButton(this, 12 * 60 - 30, 170);
+        towerButtons[4] = new PsychoTowerButton(this, 12 * 60 - 30, 210);
     }
 
     /**

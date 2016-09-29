@@ -33,7 +33,6 @@ public class TowerButton extends GUI
         towers = new ArrayList<Tower>();
         
         isSelected = false;
-        towerCounter = 0;
         
         world.addObject(this, x, y);
     }
@@ -56,13 +55,18 @@ public class TowerButton extends GUI
               tempTower = new Tower(this.world, mouse.getX(), mouse.getY());
               towers.add(tempTower);            // Add the temp tower to the array list of towers
           }
-          
           // If the mouse is dragged on top of the temp tower that was just spawned
           if(Greenfoot.mouseDragged(tempTower) && (towers != null))
           {
               //System.out.println(towers.size());
-              towers.get(towers.size() - 1).setLocation(mouse.getX(), mouse.getY());
+              if(towers.size() - 1 < 0) return;
+              else towers.get(towers.size() - 1).setLocation(mouse.getX(), mouse.getY());
           }
        }
-    } 
+    }
+    
+    protected void destroy()
+    {
+        this.world.removeObject(this);
+    }
 }

@@ -19,6 +19,7 @@ public class WaterTower extends Tower
     {
         super(world, x, y);
         
+        cooldownTime = 62;
         range = 150;                                                            
         world.addObject(this, x, y);                                  // Add this to object to the world
         isAbleToShoot = true;                                         // This tower can shoot right now
