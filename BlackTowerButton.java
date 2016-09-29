@@ -42,8 +42,8 @@ public class BlackTowerButton extends TowerButton
           // If the mouse is dragged on top of the temp tower that was just spawned
           if(Greenfoot.mouseDragged(tempTower) && (towers != null))
           {
-              //System.out.println(towers.size());
-              towers.get(towers.size() - 1).setLocation(mouse.getX(), mouse.getY());
+              if(towers.size() - 1 < 0) return;
+              else towers.get(towers.size() - 1).setLocation(mouse.getX(), mouse.getY());
             }
        }
     }

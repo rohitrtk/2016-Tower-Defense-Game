@@ -14,6 +14,7 @@ public class Bullet extends Actor
     protected double ex;                                              // Enemies x position
     protected double ey;                                              // Enemies y position
     protected int velocity;                                           // Bullets velocity in all directions
+    protected double angle;
     
     private final int baseDamage = 100;                               // The base damage of the tower
     private int damage = baseDamage * 1;                              // The actual damage of the tower
@@ -36,7 +37,7 @@ public class Bullet extends Actor
         
         velocity = 10;                                              // Sets the move speed of the bullet
         
-        double angle = Math.atan2(ey - y, ex - x);                  // Angle is the same as the inverse tangent of the difference between
+        angle = Math.atan2(ey - y, ex - x);                  // Angle is the same as the inverse tangent of the difference between
                                                                     // the enemies position and the towers position
         setRotation((int)(Math.toDegrees((angle))));                // Aim towards x angle
         
