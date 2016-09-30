@@ -11,8 +11,14 @@ public class Bloodstain extends Actor
     protected World world;        // World this object belongs to
     protected int x;              // x position
     protected int y;              // y position
-    protected int timer = 0;
+    protected int timer = 0;      // The timer before the bloodstain despawns
     
+    /**
+     * Constructs a new bloodstain
+     * @param World world
+     * @param int x position
+     * @param int y position
+     */
     public Bloodstain(World world, int x, int y)
     {
         this.world = world;
@@ -30,6 +36,10 @@ public class Bloodstain extends Actor
         if(timer > 100) destroy();
     }
     
+    /**
+     * Removes this object from the world
+     * @return void
+     */
     protected void destroy()
     {
         world.removeObject(this);

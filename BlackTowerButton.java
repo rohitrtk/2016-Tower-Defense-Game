@@ -17,6 +17,8 @@ public class BlackTowerButton extends TowerButton
     public BlackTowerButton(World world, int x, int y)
     {
         super(world, x, y);
+        
+        new Money(this.world, this.x + 67, this.y, BlackTower.cost);
     }
     
     /**

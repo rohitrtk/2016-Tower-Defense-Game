@@ -22,7 +22,7 @@ public class BlackTower extends Tower
         super(world, x, y);
         
         cooldownTime = 256;
-        range = 250;                                                            // 'Default' range for tower, will be overriden
+        range = 350;                                                            // 'Default' range for tower, will be overriden
         world.addObject(this, x, y);                                  // Add this to object to the world
         isAbleToShoot = true;                                                   // This tower can shoot right now
         timer = 0;                 

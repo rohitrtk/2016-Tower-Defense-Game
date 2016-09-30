@@ -20,6 +20,7 @@ public class BlackBullet extends Bullet
     {
         super(world, x, y, ex, ey);
         
+        damage = 500;
         velocity = 2;
         
         //turnTowards(ex, ey);

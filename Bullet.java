@@ -17,7 +17,7 @@ public class Bullet extends Actor
     protected double angle;
     
     private final int baseDamage = 100;                               // The base damage of the tower
-    private int damage = baseDamage * 1;                              // The actual damage of the tower
+    protected int damage = baseDamage * 1;                              // The actual damage of the tower
     
     /**
      * Constructs the Bullet
