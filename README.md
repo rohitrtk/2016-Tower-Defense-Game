@@ -3,8 +3,8 @@
 NOTE: Sounds and rat images do not belong to me, sources will be below.
 
 List of things required for 4+
-  - Towers can be placed in the world using button
-  - Towers have different attacks
+  - DONE Towers can be placed in the world using button 
+  - DONE Towers have different attacks
   - Towers have sounds
   - Towers have cost
 
