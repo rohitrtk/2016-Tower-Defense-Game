@@ -2,16 +2,15 @@
 |2016| Game I had to make for my computer science class using java in the greenfoot environment 
 
 List of things required for 4+
-  - Towers can be placed in the world using button
-  - Towers have different attacks
-  - Towers have sounds
-  - Towers have cost
-
-  - Bullets have sounds when striking an enemy
-  - Different bullet subclasses have different behaviours
-
-  - Enemies show an exlposion when hit by a bullet
-  - Enemies with different behaviours
-  - Remove player health is end reached
-  - Drop loot
-  - Have hp bars
+  - [x] Towers can be placed in the world using a button
+  - [x] Towers have different attacks
+  - [x] Towers have sounds
+  - [x] Towers have a cost
+  - [x] Bullets have sounds when hitting an enemy (Enemy death sounds)
+  - [x] Bullets have different behaviours 
+  
+  - [x] Enemies show an explosion when hit by a bullet (Enemy death animation)
+  - [x] Enemies have different behaviours
+  - [x] Enemies drop loot upon death
+  
+  - [x] Remove player health when enemy reaches end of track
