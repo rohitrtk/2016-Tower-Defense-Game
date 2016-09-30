@@ -25,7 +25,7 @@ public class Round extends GUI
         this.round = round;
         
         colour = new Color(0f, 0f, 0f ,0f);         // Transparent colour!
-        image = new GreenfootImage(" Round: " + round, 30, Color.WHITE, colour); // Makes the image a string with a transparent background
+        image = new GreenfootImage(" Round: " + round, 30, Color.CYAN, colour); // Makes the image a string with a transparent background
         
         setImage(image);
         
@@ -38,7 +38,7 @@ public class Round extends GUI
      */
     public void act() 
     {
-        image = new GreenfootImage(" Round: " + round, 30, Color.WHITE, colour);
+        image = new GreenfootImage(" Round: " + round, 30, Color.CYAN, colour);
         
         setImage(image);
     }

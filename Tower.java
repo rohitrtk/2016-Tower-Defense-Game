@@ -13,7 +13,6 @@ public class Tower extends Actor
     protected World world;                // The world the tower belongs to
     protected int x;                      // The towers x position
     protected int y;                      // The towers y position
-    protected int cost;                   // The cost for the tower
     protected int timer;                  // Time between shots (TIMER GOES UP BY 2'S?)
     protected float range;                // How far the tower can shoot
     protected float cooldownTime;         // The cooldown time in seconds between each shot (Mutiply original time by 36 until FPS is established)
@@ -21,6 +20,9 @@ public class Tower extends Actor
     protected boolean isAbleToShoot;      // Is the tower able to shoot right now
     protected boolean isPlaced;
     protected boolean isDestroyed;
+    protected final GreenfootSound fireSound = new GreenfootSound("fire.wav");
+    
+    public static final int cost = 100;                   // The cost for the tower
     
     /**
      * Constructs a Tower, used as a test object for scene
@@ -38,6 +40,9 @@ public class Tower extends Actor
         isAbleToShoot = true;
         timer = 0;
         isDestroyed = false;
+        fireSound.setVolume(50);
+        world.setActOrder(GUI.class, Tile.class, Waypoint.class, Tower.class, Bloodstain.class, 
+            AbstEnemy.class, Bullet.class);
     }
     
     /**
@@ -60,6 +65,9 @@ public class Tower extends Actor
         isAbleToShoot = true;                                                   // This tower can shoot right now
         timer = 0;                 
         isDestroyed = false;
+        fireSound.setVolume(50);
+        world.setActOrder(GUI.class, Tile.class, Waypoint.class, Tower.class, Bloodstain.class, 
+            AbstEnemy.class, Bullet.class);
     }
     
     /**
@@ -156,7 +164,7 @@ public class Tower extends Actor
         for(Actor a : list)
         {
             if(a instanceof Enemy)                                                                  // If instance of enemy...
-            {                
+            {   
                 if(this instanceof WaterTower)
                 {
                     new WaterBullet(world, getX(), getY() - 20, list.get(i).getX(), list.get(i).getY());
@@ -169,6 +177,7 @@ public class Tower extends Actor
                 } else {
                     new Bullet(world, getX(), getY() - 20, list.get(i).getX(), list.get(i).getY());
                 }
+                fireSound.play();
                           
                 isAbleToShoot = false;                                                              // Tower can't shoot
                 return;                                                                             // Stop any more code in this method from running

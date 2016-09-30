@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class WaterTower extends Tower
 {
+    public static final int cost = 300;                   // The cost for the tower
+    
      /**
      * Constructs a Tower
      * @param World world

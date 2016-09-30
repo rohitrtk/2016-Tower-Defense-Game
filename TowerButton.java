@@ -19,6 +19,9 @@ public class TowerButton extends GUI
     
     protected boolean isSelected;                       // Is the button selected?
     
+    protected GreenfootImage costImage;
+    protected Color colour;                           // Colour object for the background
+    
     /**
      * Constructs a new tower button
      * @param World world
@@ -32,7 +35,7 @@ public class TowerButton extends GUI
         
         towers = new ArrayList<Tower>();
         
-        isSelected = false;
+        colour = new Color(0f, 0f, 0f ,0f);         // Transparent colour!
         
         world.addObject(this, x, y);
     }
@@ -45,15 +48,16 @@ public class TowerButton extends GUI
     {
        super.act();
        MouseInfo mouse = Greenfoot.getMouseInfo();
-      
+       
        // If the mouse is doing something
        if(mouse != null)
        {
           // If the mouse is clicked on top of the button, spawn a new tower
-          if(Greenfoot.mouseClicked(this))
+          if(Greenfoot.mouseClicked(this) && Map1.getMoney() >= Tower.cost)
           {
               tempTower = new Tower(this.world, mouse.getX(), mouse.getY());
               towers.add(tempTower);            // Add the temp tower to the array list of towers
+              Map1.setMoney(Map1.getMoney() - Tower.cost);
           }
           // If the mouse is dragged on top of the temp tower that was just spawned
           if(Greenfoot.mouseDragged(tempTower) && (towers != null))

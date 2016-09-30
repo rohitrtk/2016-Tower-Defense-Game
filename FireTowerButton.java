@@ -31,11 +31,12 @@ public class FireTowerButton extends TowerButton
        if(mouse != null)
        {
           // If the mouse is doing something
-          if(Greenfoot.mouseClicked(this))
+          if(Greenfoot.mouseClicked(this) && Map1.getMoney() >= FireTower.cost)
           {
               // If the mouse is clicked on top of the button, spawn a new tower
               tempTower = new FireTower(this.world, mouse.getX(), mouse.getY());
               towers.add(tempTower);
+              Map1.setMoney(Map1.getMoney() - FireTower.cost);
           }
           
           if(Greenfoot.mouseDragged(tempTower) && (towers != null))

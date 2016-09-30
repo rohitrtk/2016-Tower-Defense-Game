@@ -17,6 +17,7 @@ public class Enemy extends AbstEnemy
     protected int moveSpeed;                                // Movement speed of this object
     protected int hp = 100;                                 // Default hit points of this object
     protected int damage = 1;                               // Damage dealt to player if this object reaches the end
+    protected final GreenfootSound death = new GreenfootSound("ratdead.wav");
     
     protected static ArrayList<Waypoint> waypoints;         // Array of waypoints the enemy will access
     
@@ -41,6 +42,7 @@ public class Enemy extends AbstEnemy
         turnTowards(waypoints.get(currentWaypoint+1).getX(), waypoints.get(currentWaypoint+1).getY());
         
         moveSpeed = 1;
+        death.setVolume(50);
     }
     
     /**
@@ -83,9 +85,10 @@ public class Enemy extends AbstEnemy
         if(hp < 1)
         {
             destroy();
+            death.play();
         } else if (isAtEdge() && currentWaypoint < waypoints.size()){
             destroy();
-            System.out.println("touch");
+            Map1.setHp(Map1.getHp() - damage);
         }
     }    
     
@@ -96,6 +99,8 @@ public class Enemy extends AbstEnemy
      */
     public void destroy()
     {
+        world.addObject(new Bloodstain(this.world, getX(), getY()), getX(), getY());
+        world.addObject(new LootDrop(this.world, getX(), getY()), getX(), getY());
         world.removeObject(this);                                                   // Destroy this object
     }
     

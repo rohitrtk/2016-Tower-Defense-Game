@@ -32,11 +32,12 @@ public class PsychoTowerButton extends TowerButton
        if(mouse != null)
        {
           // If the mouse is clicked on top of the button, spawn a new tower
-          if(Greenfoot.mouseClicked(this))
+          if(Greenfoot.mouseClicked(this) && Map1.getMoney() >= PsychoTower.cost)
           {
               // If the mouse is clicked on top of the button, spawn a new tower
               tempTower = new PsychoTower(this.world, mouse.getX(), mouse.getY());
               towers.add(tempTower);
+              Map1.setMoney(Map1.getMoney() - PsychoTower.cost);
           }
           
           if(Greenfoot.mouseDragged(tempTower) && (towers != null))

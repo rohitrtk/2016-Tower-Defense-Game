@@ -1,5 +1,6 @@
 import greenfoot.*; 
 import java.util.ArrayList;
+import java.awt.Color;
 
 /**
  * This class is where the actual game is housed, everything gameplay related
@@ -12,7 +13,6 @@ public class Map1 extends World
 {    
     private Tile tiles[][];                             // 2D array of tiles, will be used to draw tiles on to the screen
     private static ArrayList<Waypoint> waypoints;       // Array list of waypoints, enemies will move towards waypoints
-    private static int hp;                              // The players hp
     
     private int round;                                  // The current round the player is on
     private ArrayList<Enemy> enemies;                   // Array list of enemies currently in round
@@ -21,11 +21,16 @@ public class Map1 extends World
     private int timer;                                  // Timer for enemies spawning
     private boolean spawn;                              // Can the enemies spawn?
     
+    private static int money;
+    private static int hp;                              // The players hp
+    
     private Backdrop backDrop;
     private Round roundGUI;                             // Round counter
     private PlayButton playButton;                      // Play button 
-    private TowerButton[] towerButtons;                    // Tower Buttons
-
+    private TowerButton[] towerButtons;                 // Tower Buttons
+    private HP hpGUI;
+    private Money moneyGUI;
+    
     /**
      * This method constructs Map1 and initializes the world, the tiles on the world
      * the arraylist of waypoints and any enemies/towers
@@ -85,6 +90,7 @@ public class Map1 extends World
         enemNumber = 0;
         round = 0;
         hp = 100;
+        money = 100;
         timer = 0;
         spawn = true;
     }
@@ -96,7 +102,8 @@ public class Map1 extends World
     {       
         spawnEnemy();
         roundGUI.setRound(round);
-        MouseInfo mouse = Greenfoot.getMouseInfo();
+        hpGUI.setHp(hp);
+        moneyGUI.setMula(money);
     }
     
     /**
@@ -130,6 +137,25 @@ public class Map1 extends World
     }
     
     /**
+     * This method sets the money of the player
+     * @param int hp
+     * @return void
+     */
+    public static void setMoney(int money)
+    {
+        Map1.money = money;
+    }
+    
+    /**
+     * This method returns the money of the player
+     * @return int money
+     */
+    public static int getMoney()
+    {
+        return money;
+    }
+    
+    /**
      * This method handles all of the gui for the map
      * @return void
      */
@@ -138,6 +164,8 @@ public class Map1 extends World
         backDrop = new Backdrop(this, 12 * 60, 4 * 60);
         playButton = new PlayButton(this, 12 * 60 + 18, 8 * 60, false);
         roundGUI = new Round(this, 12 * 60, 20, round);
+        hpGUI = new HP(this, 12 * 60, 400, hp);
+        moneyGUI = new Money(this, 12 * 60, 300, money);
         
         towerButtons = new TowerButton[5];
         towerButtons[0] = new TowerButton(this, 12 * 60 - 30, 50);

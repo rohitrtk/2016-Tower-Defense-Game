@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Money
+comment0.text=\r\n\ This\ class\ will\ be\ used\ as\ a\ label\ to\ display\ the\ money\ the\ player\ has\r\n\ \r\n\ @author\ Rohit\ Terry\ Kisto\r\n\ @version\ 2016/9/30\r\n
+comment1.params=world\ x\ y\ mula
+comment1.target=Money(greenfoot.World,\ int,\ int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Money\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=mula
+comment3.target=void\ setMula(int)
+comment3.text=\r\n\ Sets\ the\ current\ money\ to\ the\ parameter\r\n\ @param\ int\ mula\r\n\ @return\ void\r\n
+comment4.params=
+comment4.target=int\ getMula()
+comment4.text=\r\n\ Gets\ the\ current\ round\ \r\n\ @return\ int\ mula\r\n
+numComments=5
