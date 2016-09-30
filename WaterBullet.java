@@ -20,6 +20,7 @@ public class WaterBullet extends Bullet
     {
         super(world, x, y, ex, ey);
         
+        damage = 150;
         velocity = 5;
         
         //turnTowards(ex, ey);

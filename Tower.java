@@ -40,7 +40,7 @@ public class Tower extends Actor
         isAbleToShoot = true;
         timer = 0;
         isDestroyed = false;
-        fireSound.setVolume(50);
+        //fireSound.setVolume(50);
         world.setActOrder(GUI.class, Tile.class, Waypoint.class, Tower.class, Bloodstain.class, 
             AbstEnemy.class, Bullet.class);
     }
@@ -65,7 +65,7 @@ public class Tower extends Actor
         isAbleToShoot = true;                                                   // This tower can shoot right now
         timer = 0;                 
         isDestroyed = false;
-        fireSound.setVolume(50);
+        //fireSound.setVolume(100);
         world.setActOrder(GUI.class, Tile.class, Waypoint.class, Tower.class, Bloodstain.class, 
             AbstEnemy.class, Bullet.class);
     }
@@ -177,8 +177,8 @@ public class Tower extends Actor
                 } else {
                     new Bullet(world, getX(), getY() - 20, list.get(i).getX(), list.get(i).getY());
                 }
-                fireSound.play();
-                          
+                //fireSound.play();
+                Greenfoot.playSound("fire.wav");        
                 isAbleToShoot = false;                                                              // Tower can't shoot
                 return;                                                                             // Stop any more code in this method from running
             }

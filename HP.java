@@ -13,6 +13,13 @@ public class HP extends GUI
     GreenfootImage image;                   // A greenfoot image to display text
     Color colour;                           // Colour object for the background
     
+    /**
+     * Constructs a new HP label
+     * @param World world
+     * @param int x position
+     * @param int y position
+     * @param int hp
+     */
     public HP(World world, int x, int y, int hp)
     {
         super(world, x, y);

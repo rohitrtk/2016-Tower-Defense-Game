@@ -37,6 +37,12 @@ public class TowerButton extends GUI
         
         colour = new Color(0f, 0f, 0f ,0f);         // Transparent colour!
         
+        if(!(this instanceof BlackTowerButton || this instanceof FireTowerButton ||
+            this instanceof PsychoTowerButton || this instanceof WaterTowerButton))
+        {
+            new Money(this.world, this.x + 60, this.y, Tower.cost);
+        }
+        
         world.addObject(this, x, y);
     }
     

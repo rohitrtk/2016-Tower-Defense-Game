@@ -31,6 +31,10 @@ public class Map1 extends World
     private HP hpGUI;
     private Money moneyGUI;
     
+    private GreenfootSound bgm;
+    // IF YOU WANT TO TURN THE BGM OFF, CHANGE THE BOOLEAN BELOW!
+    private boolean mute = true;
+    
     /**
      * This method constructs Map1 and initializes the world, the tiles on the world
      * the arraylist of waypoints and any enemies/towers
@@ -41,7 +45,11 @@ public class Map1 extends World
         // Cell width is 60 pixels each
         super(840, 540, 1); 
         
-        guiHandler();
+        // Background music mute option
+        bgm = new GreenfootSound("bgm.mp3");
+        if(!mute) bgm.playLoop();
+        
+        guiHandler();                                   // Loads up the GUI on the right side of the screen
         
         tiles = new Tile[10][14];                       // Sets width and height of tile map
         for(int i = 0;i < 10;i++)                       // Draws either a wall or dirt tile depending on its index number
@@ -103,7 +111,7 @@ public class Map1 extends World
         spawnEnemy();
         roundGUI.setRound(round);
         hpGUI.setHp(hp);
-        moneyGUI.setMula(money);
+        moneyGUI.setMoney(money);
     }
     
     /**

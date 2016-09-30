@@ -42,7 +42,7 @@ public class Enemy extends AbstEnemy
         turnTowards(waypoints.get(currentWaypoint+1).getX(), waypoints.get(currentWaypoint+1).getY());
         
         moveSpeed = 1;
-        death.setVolume(50);
+        death.setVolume(100);
     }
     
     /**
@@ -85,7 +85,8 @@ public class Enemy extends AbstEnemy
         if(hp < 1)
         {
             destroy();
-            death.play();
+            Greenfoot.playSound("ratdead.wav");
+            //death.play();
         } else if (isAtEdge() && currentWaypoint < waypoints.size()){
             destroy();
             Map1.setHp(Map1.getHp() - damage);

@@ -20,6 +20,7 @@ public class FireBullet extends Bullet
     {
         super(world, x, y, ex, ey);
         
+        damage = 300;
         velocity = 10;
         
         //turnTowards(ex, ey);

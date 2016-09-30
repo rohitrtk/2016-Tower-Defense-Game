@@ -17,6 +17,8 @@ public class PsychoTowerButton extends TowerButton
     public PsychoTowerButton(World world, int x, int y)
     {
         super(world, x, y);
+        
+        new Money(this.world, this.x + 67, this.y, PsychoTower.cost);
     }
     
     /**

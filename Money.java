@@ -9,17 +9,24 @@ import java.awt.Color;
  */
 public class Money extends GUI
 {
-    int mula;
+    int money;                              // The amount of money the player has
     GreenfootImage image;                   // A greenfoot image to display text
     Color colour;                           // Colour object for the background
     
-    public Money(World world, int x, int y, int mula)
+    /**
+     * Constructs a new money label for the user to view
+     * @param World world
+     * @param int x position
+     * @param int y position
+     * @param int money
+     */
+    public Money(World world, int x, int y, int money)
     {
         super(world, x, y);
         
-        this.mula = mula;
+        this.money = money;
         colour = new Color(0f, 0f, 0f ,0f);         // Transparent colour!
-        image = new GreenfootImage("$$$: " + mula, 30, Color.GREEN, colour); // Makes the image a string with a transparent background
+        image = new GreenfootImage("$$$: " + money, 30, Color.GREEN, colour); // Makes the image a string with a transparent background
         
         setImage(image);
         
@@ -32,27 +39,27 @@ public class Money extends GUI
      */
     public void act() 
     {
-        image = new GreenfootImage("$$$: " + mula, 30, Color.GREEN, colour);
+        image = new GreenfootImage("$$$: " + money, 30, Color.GREEN, colour);
         
         setImage(image);
     }   
     
     /**
      * Sets the current money to the parameter
-     * @param int mula
+     * @param int money
      * @return void
      */
-    public void setMula(int mula)
+    public void setMoney(int money)
     {
-        this.mula = mula;
+        this.money = money;
     }
     
     /**
      * Gets the current round 
-     * @return int mula
+     * @return int money
      */
-    public int getMula()
+    public int getMoney()
     {
-        return mula;
+        return money;
     }  
 }
