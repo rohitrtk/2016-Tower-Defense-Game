@@ -1,5 +1,6 @@
 # 2016-Tower-Defense-Game
-|2016| Game I had to make for my computer science class using java in the greenfoot environment 
+|2016| Game I had to make for my computer science class using java in the greenfoot environment.
+* **Note: Music and rat sprites do not belong to me, sources will be below!**  
 
 List of things required for 4+
   - [x] Towers can be placed in the world using a button
