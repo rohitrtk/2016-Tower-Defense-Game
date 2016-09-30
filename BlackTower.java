@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BlackTower extends Tower
 {
+    public static final int cost = 1000;                   // The cost for the tower
+    
      /**
      * Constructs a Tower
      * @param World world
@@ -19,7 +21,7 @@ public class BlackTower extends Tower
     {
         super(world, x, y);
         
-        cooldownTimer = 256;
+        cooldownTime = 256;
         range = 250;                                                            // 'Default' range for tower, will be overriden
         world.addObject(this, x, y);                                  // Add this to object to the world
         isAbleToShoot = true;                                                   // This tower can shoot right now
